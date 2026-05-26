@@ -1,65 +1,87 @@
-import Image from "next/image";
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
+import ConglomerateGrid from '@/components/ConglomerateGrid';
+import { KAPTURE_INFO } from '@/constants';
+import { Mail, Shield, Globe, Users } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen bg-black">
+      <Navbar />
+      <Hero />
+      <ConglomerateGrid />
+      
+      {/* Visionary Section */}
+      <section className="py-24 bg-slate-950 border-y border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div>
+             <p className="text-blue-500 font-black uppercase tracking-[0.4em] text-xs mb-4">The Visionary</p>
+             <h2 className="text-white text-5xl md:text-7xl font-black uppercase tracking-tighter italic leading-none">Rodney Manyepa</h2>
+             <p className="text-slate-400 text-lg mt-8 leading-relaxed">
+                Entrepreneur, Designer, and Global Storyteller. Rodney is the architect of the Kapture Empire, dedicated to organizing Africa for fair and profitable global engagement.
+             </p>
+             <div className="mt-10 grid grid-cols-2 gap-8">
+                <div>
+                   <p className="text-white text-4xl font-black italic">10+</p>
+                   <p className="text-slate-500 text-xs font-bold uppercase tracking-widest mt-1">Years of Innovation</p>
+                </div>
+                <div>
+                   <p className="text-white text-4xl font-black italic">UNICORN</p>
+                   <p className="text-slate-500 text-xs font-bold uppercase tracking-widest mt-1">Growth Mindset</p>
+                </div>
+             </div>
+          </div>
+          <div className="relative aspect-square bg-slate-900 rounded-3xl overflow-hidden border border-white/10 flex items-center justify-center p-12 group">
+             {/* Placeholder for Rodney's High-End Portrait */}
+             <div className="text-center">
+                <Users size={64} className="text-white/20 mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                <p className="text-white/40 font-black uppercase tracking-tighter italic">Portrait of the Architect</p>
+             </div>
+             <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent" />
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Corporate Values / Stats */}
+      <section className="py-24 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 text-center">
+          <div className="space-y-4">
+            <Globe className="mx-auto text-blue-500" size={32} />
+            <h4 className="text-white font-black uppercase tracking-widest text-sm">Global Scale</h4>
+            <p className="text-slate-500 text-xs">Africa-centric, globally minded infrastructure.</p>
+          </div>
+          <div className="space-y-4">
+            <Shield className="mx-auto text-blue-500" size={32} />
+            <h4 className="text-white font-black uppercase tracking-widest text-sm">Precision Design</h4>
+            <p className="text-slate-500 text-xs">Excellence in every pixel and every line of code.</p>
+          </div>
+          <div className="space-y-4">
+            <Mail className="mx-auto text-blue-500" size={32} />
+            <h4 className="text-white font-black uppercase tracking-widest text-sm">Storytelling</h4>
+            <p className="text-slate-500 text-xs">Narratives that redefine brands and industries.</p>
+          </div>
+          <div className="space-y-4">
+            <Users className="mx-auto text-blue-500" size={32} />
+            <h4 className="text-white font-black uppercase tracking-widest text-sm">The Network</h4>
+            <p className="text-slate-500 text-xs">Empowering the next generation of pioneers.</p>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 bg-black border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+          <span className="text-white/40 text-2xl font-black uppercase tracking-tighter italic">KAPTURE</span>
+          <div className="flex gap-6">
+            {Object.entries(KAPTURE_INFO.socials).filter(([key]) => key !== 'handle').map(([key, url]) => (
+              <a key={key} href={url as string} target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest">
+                {key}
+              </a>
+            ))}
+          </div>
+          <p className="text-slate-600 text-[10px] uppercase font-bold tracking-widest">© 2026 Kapture Global. All rights reserved.</p>
+        </div>
+      </footer>
+    </main>
   );
 }
